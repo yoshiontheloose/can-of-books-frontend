@@ -1,0 +1,13 @@
+// this came from Auth0 DOCS
+// https://manage.auth0.com/dashboard/us/dev-wajr50en/applications/OicWcl01VU13GLT7FXyt0VbPSxGlNbSd/quickstart
+
+import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+
+const LoginButton = () => {
+  const { loginWithRedirect } = useAuth0();
+
+  return <button onClick={() => loginWithRedirect()}>Log In</button>;
+};
+
+export default LoginButton;
