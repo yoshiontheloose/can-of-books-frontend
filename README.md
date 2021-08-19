@@ -14,8 +14,8 @@ Clone this repo to your own account with the green "Use this template" button. T
 
 # Project Name
 
-**Author**: Team Member Names Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: Clarissa P and Mark T
+**Version**: 1.1.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
 
@@ -37,23 +37,22 @@ As a user, I want to update book details on my list, so that I can change the bo
 
 ## Architecture
 
+JavaScript  
 Trello  
 React  
+Axios
 AuthO  
-JavaScript  
+Mongoose
 
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-
-## Change Log
-
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
 
 Mark Thanadabouth
 JP Jones
+Michael Ecleava
+
+Auth0 Docs
 
 ---
 
@@ -126,3 +125,21 @@ Start time: 8/14 3 hours
 Finish time: 8/18
 
 Actual time needed to complete: 6 hours
+
+![Lab 11 UML](assets/lab11_UML.jpg)
+
+---
+
+Name of feature: Lab 12
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 8/18 1 hour
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+![Lab 12 UML](assets/Lab12_UML.jpg)
+
+---
