@@ -123,6 +123,6 @@ Estimate of time needed to complete: 5 hours
 
 Start time: 8/14 3 hours
 
-Finish time: _____
+Finish time: 8/18
 
-Actual time needed to complete: _____
+Actual time needed to complete: 6 hours
