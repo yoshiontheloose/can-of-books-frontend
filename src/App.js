@@ -17,6 +17,8 @@ import axios from 'axios';
 
 
 class App extends React.Component {
+
+  // json web token from backend
   makeRequest = async() => {
     const {getIdTokenClaims} = this.props.auth0;
     let tokenClaims = await getIdTokenClaims();
@@ -32,8 +34,8 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('app', this.props);
-    console.log('props', this.props.auth0);
+    // console.log('app', this.props);
+    // console.log('props', this.props.auth0);
     const { user, IsLoading, isAuthenticated } = this.props.auth0;
     console.log('user', user);
     return (
