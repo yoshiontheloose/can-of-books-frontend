@@ -33,6 +33,8 @@ class App extends React.Component {
     console.log('Working data: ', serverResponse);
   }
 
+  
+
   render() {
     // console.log('app', this.props);
     // console.log('props', this.props.auth0);

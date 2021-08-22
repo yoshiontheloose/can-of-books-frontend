@@ -4,4 +4,9 @@
 
 .bookCard {
   color:black;
+  background-color: ;
+}
+
+.deleteButton {
+  margin-bottom: 50px;
 }
