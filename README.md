@@ -143,3 +143,14 @@ Actual time needed to complete: _____
 ![Lab 12 UML](assets/Lab12_UML.jpg)
 
 ---
+
+Name of feature: Lab 13
+Today you will add the functionality for the user to add a book or delete a book. A book will be created with a form in React, and sent to the server where it will be saved into the database, and then returned to the front end to be displayed in the list of favorite books. You will then be able to delete that book with a click of a button, to have it instantly removed from the front end, and a request sent to back end for removal.
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 8/21 
+
+Finish time: 8/22
+
+Actual time needed to complete: 6 hours
