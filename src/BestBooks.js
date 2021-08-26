@@ -4,8 +4,8 @@ import { Jumbotron, Carousel, Card, Button } from 'react-bootstrap';
 import './BestBooks.css';
 import axios from 'axios';
 import { withAuth0 } from "@auth0/auth0-react";
-import AddBook from './AddBook';
 import BookFormModal from './BookFormModal';
+import UpdateBookFormModal from './UpdateBookFormModal';
 
 class MyFavoriteBooks extends React.Component {
 
@@ -15,6 +15,8 @@ class MyFavoriteBooks extends React.Component {
     this.state = {
       books: [],
       showModal: false,
+      showUpdateModal: false,
+      selectedBook: null,
     }
   }
 
@@ -73,6 +75,23 @@ class MyFavoriteBooks extends React.Component {
     }
   }
 
+
+  // lab 14 updating book
+  handleUpdate = async (book) => {
+    await axios.put(`http://localhost:3001/put-books/${book._id}`, book);
+    let updatedBooks = this.state.books.map(updatedBook => {
+      if (updatedBook._id === book._id) {
+        return book;
+      }
+      else {
+        return updatedBook;
+      }
+    });
+    this.setState({
+      books: updatedBooks,
+    })
+  }
+
   // Modal buttons
   // Shows when "Add Book" button is clicked
   // Hide modal when closed
@@ -89,12 +108,25 @@ class MyFavoriteBooks extends React.Component {
     })
   }
 
+  // for updated Modal
 
+  handleShowUpdatedModal = (book) => {
+    this.setState({
+      showUpdateModal: true,
+      selectedBook: book,
+    })
+  }
 
+  handleCloseUpdatedModal = () => {
+    this.setState({
+      showUpdateModal: false,
+    })
+    // console.log(this.state.showUpdateModal);
+  }
 
 
   render() {
-    console.log(this.state);
+    console.log(this.state.selectedBook);
     return (
       <Jumbotron>
         <h1>My Favorite Books</h1>
@@ -115,14 +147,23 @@ class MyFavoriteBooks extends React.Component {
                     <Card.Text>{book.status}</Card.Text>
                     <Card.Text>{book.email}</Card.Text>
                   </Card.Body>
+                  <Button className="Update" variant="success" size="sm" onClick={() => this.handleShowUpdatedModal(book)}>Update</Button>
                   <Button className="deleteButton" variant="danger" size="sm" onClick={() => this.handleDelete(book._id)}>Delete Book</Button>
                 </Card>
               </Carousel.Item>
             ))}
           </Carousel>
           : ''}
-        <BookFormModal handleCreate={this.handleCreate} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />
+        <BookFormModal
+          handleCreate={this.handleCreate}
+          showModal={this.state.showModal}
+          handleCloseModal={this.handleCloseModal} />
         <Button onClick={this.handleShowModal}>Add Book</Button>
+        <UpdateBookFormModal
+          showUpdateModal={this.state.showUpdateModal}
+          handleCloseUpdatedModal={this.handleCloseUpdatedModal}
+          selectedBook={this.state.selectedBook}
+          handleUpdate={this.handleUpdate} />
       </Jumbotron>
     )
   }
